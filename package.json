@@ -1,0 +1,45 @@
+{
+  "name": "react-elm-state-management",
+  "version": "0.0.1",
+  "description": "React bindings for Elm as state management",
+  "repository": "boiyaa/react-elm-state-management",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/boiyaa/react-elm-state-management/issues"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "elm"
+  ],
+  "author": "boiyaa <boiyaa@hotmail.com>",
+  "homepage": "https://github.com/boiyaa/react-elm-state-management#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-app": "^3.0.1",
+    "enzyme": "^2.9.1",
+    "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-config-react-app": "^1.0.5",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.50.0",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
+    "react-dev-utils": "^3.0.2",
+    "react-test-renderer": "^15.6.1",
+    "webpack": "^3.4.1"
+  },
+  "dependencies": {
+    "react": "^15.6.1"
+  }
+}
