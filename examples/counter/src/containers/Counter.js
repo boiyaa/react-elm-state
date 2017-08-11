@@ -1,8 +1,8 @@
 // @flow
 import React from "react"
-import {withElm} from "../../../../src"
+import { withElm } from "../../../../src"
 
-type Props = {
+type ElmProps = {
   value: number,
   step: number,
   onStepChange: () => void,
@@ -20,7 +20,7 @@ export const Counter = ({
   onIncreaseAsync,
   onDecrease,
   onDecreaseAsync
-}: Props) =>
+}: ElmProps) =>
   <div>
     <p>
       {value}
@@ -38,7 +38,7 @@ export const Counter = ({
     <button onClick={onDecreaseAsync}>- in 1sec</button>
   </div>
 
-export default withElm(Counter, [
+export default (withElm: WithElm<{}, ElmProps>)([
   "value",
   "step",
   "onStepChange",
@@ -46,4 +46,4 @@ export default withElm(Counter, [
   "onIncreaseAsync",
   "onDecrease",
   "onDecreaseAsync"
-])
+])(Counter)

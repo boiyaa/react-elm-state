@@ -20,7 +20,7 @@ export class Provider extends Component {
   }
 }
 
-export const withElm = (WrappedComponent, propNames) =>
+export const withElm = propNames => WrappedComponent =>
   class extends Component {
     static contextTypes = {
       ports: PropTypes.object
@@ -42,7 +42,6 @@ export const withElm = (WrappedComponent, propNames) =>
         }
 
         if (this.context.ports[name] && this.context.ports[name].subscribe) {
-          // state[name] = null
           this.handleSubscribe[name] = this.handleSubscribe.bind(this, name)
         }
       })
@@ -71,6 +70,10 @@ export const withElm = (WrappedComponent, propNames) =>
     }
 
     render() {
-      return <WrappedComponent {...this.state} />
+      const props = {
+        ...this.props,
+        ...this.state
+      }
+      return <WrappedComponent {...props} />
     }
   }
