@@ -1,11 +1,11 @@
 {
-  "name": "react-elm-state-management",
+  "name": "react-elm-state",
   "version": "0.0.1",
   "description": "React bindings for Elm as state management",
-  "repository": "boiyaa/react-elm-state-management",
+  "repository": "boiyaa/react-elm-state",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/boiyaa/react-elm-state-management/issues"
+    "url": "https://github.com/boiyaa/react-elm-state/issues"
   },
   "directories": {
     "example": "examples"
@@ -18,7 +18,7 @@
     "elm"
   ],
   "author": "boiyaa <boiyaa@hotmail.com>",
-  "homepage": "https://github.com/boiyaa/react-elm-state-management#readme",
+  "homepage": "https://github.com/boiyaa/react-elm-state#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",

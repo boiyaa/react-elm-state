@@ -1,2 +1,2 @@
-# react-elm-state-management
+# react-elm-state
 React bindings for Elm as state management

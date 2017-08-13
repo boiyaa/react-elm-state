@@ -1,7 +1,7 @@
 {
     "version": "0.0.1",
     "summary": "counter",
-    "repository": "https://github.com/boiyaa/react-elm-state-management.git",
+    "repository": "https://github.com/boiyaa/react-elm-state.git",
     "license": "BSD3",
     "source-directories": [
         "./src/modules"
