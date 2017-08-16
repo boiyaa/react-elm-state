@@ -5,10 +5,10 @@ import Counter from "./containers/Counter"
 import Elm from "./modules/Main.elm"
 import { Provider } from "../../../src"
 
-const ports = Elm.Main.worker().ports
+const initialState = { value: 0, step: 1 }
 
 render(
-  <Provider ports={ports}>
+  <Provider module={Elm.Main} initialState={initialState}>
     <Counter />
   </Provider>,
   document.getElementById("root")

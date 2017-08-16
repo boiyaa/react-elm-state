@@ -80,9 +80,9 @@ decodeStep =
 -- UPDATE
 
 
-init : ( Model, Cmd Msg )
-init =
-    ( Model 0 1, Cmd.batch [ value 0, step 1 ] )
+init : Model -> ( Model, Cmd Msg )
+init flags =
+    ( flags, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -138,9 +138,9 @@ setTimeout msg delay =
 -- MAIN
 
 
-main : Program Never Model Msg
+main : Program Model Model Msg
 main =
-    Platform.program
+    Platform.programWithFlags
         { init = init
         , update = update
         , subscriptions = subscriptions

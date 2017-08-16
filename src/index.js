@@ -4,15 +4,27 @@ import PropTypes from "prop-types"
 export class Provider extends Component {
   static propTypes = {
     children: PropTypes.element,
-    ports: PropTypes.object
+    module: PropTypes.object,
+    initialState: PropTypes.object
   }
 
   static childContextTypes = {
-    ports: PropTypes.object
+    ports: PropTypes.object,
+    initialState: PropTypes.object
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      ports: props.module.worker(props.initialState).ports
+    }
   }
 
   getChildContext() {
-    return { ports: this.props.ports }
+    return {
+      ports: this.state.ports,
+      initialState: this.props.initialState
+    }
   }
 
   render() {
@@ -23,15 +35,13 @@ export class Provider extends Component {
 export const withElm = propNames => WrappedComponent =>
   class extends Component {
     static contextTypes = {
-      ports: PropTypes.object
+      ports: PropTypes.object,
+      initialState: PropTypes.object
     }
 
     constructor(props, context) {
       super(props, context)
-      this.initState()
-    }
 
-    initState() {
       const state = {}
 
       propNames.forEach(name => {
@@ -43,6 +53,10 @@ export const withElm = propNames => WrappedComponent =>
 
         if (this.context.ports[name] && this.context.ports[name].subscribe) {
           this.handleSubscribe[name] = this.handleSubscribe.bind(this, name)
+
+          if (this.context.initialState.hasOwnProperty(name)) {
+            state[name] = this.context.initialState[name]
+          }
         }
       })
 

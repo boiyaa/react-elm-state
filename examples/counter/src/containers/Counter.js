@@ -14,7 +14,7 @@ type ElmProps = {
 
 export const Counter = ({
   value,
-  step = 1,
+  step,
   onStepChange,
   onIncrease,
   onIncreaseAsync,
