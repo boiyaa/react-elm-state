@@ -1,6 +1,6 @@
 {
   "name": "react-elm-state",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React bindings for Elm as state management",
   "main": "lib/index.js",
   "scripts": {
