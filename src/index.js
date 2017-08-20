@@ -5,25 +5,25 @@ export class Provider extends Component {
   static propTypes = {
     children: PropTypes.element,
     module: PropTypes.object,
-    initialState: PropTypes.object
+    flags: PropTypes.object
   }
 
   static childContextTypes = {
     ports: PropTypes.object,
-    initialState: PropTypes.object
+    flags: PropTypes.object
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      ports: props.module.worker(props.initialState).ports
+      ports: props.module.worker(props.flags).ports
     }
   }
 
   getChildContext() {
     return {
       ports: this.state.ports,
-      initialState: this.props.initialState
+      flags: this.props.flags
     }
   }
 
@@ -36,7 +36,7 @@ export const withElm = propNames => WrappedComponent =>
   class extends Component {
     static contextTypes = {
       ports: PropTypes.object,
-      initialState: PropTypes.object
+      flags: PropTypes.object
     }
 
     constructor(props, context) {
@@ -54,8 +54,8 @@ export const withElm = propNames => WrappedComponent =>
         if (this.context.ports[name] && this.context.ports[name].subscribe) {
           this.handleSubscribe[name] = this.handleSubscribe.bind(this, name)
 
-          if (this.context.initialState.hasOwnProperty(name)) {
-            state[name] = this.context.initialState[name]
+          if (this.context.flags.hasOwnProperty(name)) {
+            state[name] = this.context.flags[name]
           }
         }
       })

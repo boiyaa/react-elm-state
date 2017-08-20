@@ -5,10 +5,10 @@ import Counter from "./containers/Counter"
 import Elm from "./modules/Main.elm"
 import { Provider } from "../../../src"
 
-const initialState = { value: 0, step: 1 }
+const flags = { value: 0, step: 1 }
 
 render(
-  <Provider module={Elm.Main} initialState={initialState}>
+  <Provider module={Elm.Main} flags={flags}>
     <Counter />
   </Provider>,
   document.getElementById("root")
