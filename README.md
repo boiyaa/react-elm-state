@@ -8,7 +8,9 @@ $ npm install --save react-elm-state
 
 ### The Gist
 
-```js:index.js
+`index.js`
+
+```js
 import React from "react"
 import { render } from "react-dom"
 import { Provider, withElm } from "react-elm-state"
@@ -32,7 +34,9 @@ render(
 )
 ```
 
-```elm:Main.elm
+`Main.elm`
+
+```elm
 port module Main exposing (..)
 
 import Json.Decode exposing (Value)
