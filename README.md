@@ -24,10 +24,10 @@ const Counter = ({ value, onIncrease }) =>
 
 const ConnectedCounter = withElm(["value", "onIncrease"])(Counter)
 
-const initialState = { value: 0 }
+const flags = { value: 0 }
 
 render(
-  <Provider module={Elm.Main} initialState={initialState}>
+  <Provider module={Elm.Main} flags={flags}>
     <ConnectedCounter />
   </Provider>,
   document.getElementById("root")
