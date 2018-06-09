@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "examples/counter/elm-package.json",
+        "examples/counter/package.json",
+        "examples/counter/tests/elm-package.json",
+        "package.json"
+      ]
+    }
+  }
+}
