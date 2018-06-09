@@ -1,5 +1,7 @@
 # react-elm-state
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/boiyaa/react-elm-state.svg)](https://greenkeeper.io/)
+
 ### Installation
 
 ```sh
